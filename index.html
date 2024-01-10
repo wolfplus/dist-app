@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Réservez en quelques clics</title>
+
+  <base href="/">
+
+  <meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png">
+  <!-- Add Stripe library-->
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- theme and plugins. should be loaded in the HEAD section -->
+  <link rel="stylesheet" href="https://epaync.nc/static/js/krypton-client/V4.0/ext/classic-reset.min.css">
+  <script src="https://epaync.nc/static/js/krypton-client/V4.0/ext/classic.js">
+  </script>
+  <style>
+    .kr-payment-button {
+      display: none !important;
+    }
+  </style>
+  <style>
+    .kr-security-code .kr-visibility-button {
+      width: 30px !important;
+    }
+
+    .kr-pan .kr-icon-wrapper-root.kr-multi-brand {
+      margin-right: 12px !important;
+    }
+
+    .kr-embedded .kr-form-error.kr-form-error-visible {
+      display: none;
+    }
+  </style>
+
+<style>:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,:after,:before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}@media print{*,:after,:before{text-shadow:none!important;box-shadow:none!important}@page{size:a3}body{min-width:992px!important}}:root{--ion-color-text-header-home:white;--ion-color-primary:#ED6E1C;--ion-color-primary-rgb:rgb(237, 110, 28, 1);--ion-color-primary-contrast:#ffffff;--ion-color-primary-contrast-rgb:rgb(255, 255, 255);--ion-color-primary-shade:#77370e;--ion-color-primary-tint:#f6b78e;--ion-color-primary-btn-text:#ffffff;--ion-color-secondary:#EDEDED;--ion-color-secondary-rgb:rgb(237, 237, 237, 1);--ion-color-secondary-contrast:#ffffff;--ion-color-secondary-contrast-rgb:rgb(255, 255, 255);--ion-color-secondary-shade:#777777;--ion-color-secondary-tint:#f6f6f6;--ion-color-secondary-btn-text:#ffffff;--ion-color-tertiary:#f7f7ef;--ion-color-tertiary-rgb:rgb(247,247,239);--ion-color-tertiary-contrast:#000000;--ion-color-tertiary-contrast-rgb:rgb(0,0,0);--ion-color-tertiary-shade:#d9d9d2;--ion-color-tertiary-tint:#f8f8f1;--ion-color-tertiary-btn-text:white;--ion-color-success:#2dd36f;--ion-color-success-rgb:rgb(45,211,111);--ion-color-success-contrast:#ffffff;--ion-color-success-contrast-rgb:rgb(255,255,255);--ion-color-success-shade:#28ba62;--ion-color-success-tint:#42d77d;--ion-color-warning:#ffc409;--ion-color-warning-rgb:rgb(255,196,9);--ion-color-warning-contrast:#000000;--ion-color-warning-contrast-rgb:rgb(0,0,0);--ion-color-warning-shade:#e0ac08;--ion-color-warning-tint:#ffca22;--ion-color-danger:#eb445a;--ion-color-danger-rgb:rgb(235,68,90);--ion-color-danger-contrast:#ffffff;--ion-color-danger-contrast-rgb:rgb(255,255,255);--ion-color-danger-shade:#cf3c4f;--ion-color-danger-tint:#ed576b;--ion-color-dark:#222455;--ion-color-dark-rgb:rgb(34,36,40);--ion-color-dark-contrast:#ffffff;--ion-color-dark-contrast-rgb:rgb(255,255,255);--ion-color-dark-shade:#1e2023;--ion-color-dark-tint:#383a3e;--ion-color-medium:#92949c;--ion-color-medium-rgb:rgb(146,148,156);--ion-color-medium-contrast:#ffffff;--ion-color-medium-contrast-rgb:rgb(255,255,255);--ion-color-medium-shade:#808289;--ion-color-medium-tint:#9d9fa6;--ion-color-light:#f6f5f5;--ion-color-light-rgb:rgb(246,245,245);--ion-color-light-contrast:var(--ion-secondary-text-color);--ion-color-light-contrast-rgb:rgb(0,0,0);--ion-color-light-shade:#d8d8d8;--ion-color-light-tint:#f7f6f6;--ion-color-container-1:#d9e6ec;--ion-color-container-1-rgb:rgb(210,221,227);--ion-color-container-1-contrast-1:#2e3138;--ion-color-container-1-contrast-2:#ffffff;--ion-color-container-1-shade:#b9c2c8;--ion-color-container-1-tint:#d7e0e6;--ion-color-container-2:#a4afca;--ion-color-white:#ffffff;--background-gray:#f5f6fa;--background-dark-gray:#dddfe8;--background-ligth-gray:#f8f8fb;--app-font-big-size:2rem;--app-font-size:1.4rem;--app-font-small-size:1rem;--app-font-color:#212529;--app-font-color-gray:#76767d;--app-dark-or-not-color:white;--app-dark-or-not-color-clear:#f2f3f6;--app-dark-or-not-color-contrast:black;--app-background-card-color:#F3F9FD;--app-background-card-matches-color:#F9FAFC}html{--ion-font-family:var(--ion-default-font)}body{background:var(--ion-background-color)}@supports (padding-top: 20px){html{--ion-safe-area-top:var(--ion-statusbar-padding)}}@supports (padding-top: constant(safe-area-inset-top)){html{--ion-safe-area-top:constant(safe-area-inset-top);--ion-safe-area-bottom:constant(safe-area-inset-bottom);--ion-safe-area-left:constant(safe-area-inset-left);--ion-safe-area-right:constant(safe-area-inset-right)}}@supports (padding-top: env(safe-area-inset-top)){html{--ion-safe-area-top:env(safe-area-inset-top);--ion-safe-area-bottom:env(safe-area-inset-bottom);--ion-safe-area-left:env(safe-area-inset-left);--ion-safe-area-right:env(safe-area-inset-right)}}*{box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}html{width:100%;height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}html:not(.hydrated) body{display:none}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin:0;padding:0;position:fixed;width:100%;max-width:100%;height:100%;max-height:100%;transform:translateZ(0);text-rendering:optimizeLegibility;overflow:hidden;touch-action:manipulation;-webkit-user-drag:none;-ms-content-zooming:none;word-wrap:break-word;overscroll-behavior-y:none;-webkit-text-size-adjust:none;text-size-adjust:none}html{font-family:var(--ion-font-family)}@font-face{font-family:Panton-Regular;font-style:normal;src:url(Panton-Regular.ttf);font-display:swap}:root{--page-bg-color:#F6F6F8;--ion-font-family:"Panton-Regular";--ion-text-color:#212529;--ion-secondary-text-color:#8b8b92;--ion-title-color:#212529;--flag-color-1:var(--ion-color-primary);--flag-color-2:var(--ion-color-white);--flag-color-3:#cb2014;--header-v1-height:70px;--footer-v1-height:6.5rem;--border-radius-1:.5rem;--border-radius-2:.9rem;--do-border-color:#E8E8E8;--border-style:none;--padding-start:0!important;--inner-padding-end:0!important}html{font-size:62.5%}body{font-size:1.4rem;font-weight:500}body{background:var(--app-dark-or-not-color)!important;color:var(--app-dark-or-not-color-contrast)!important}@font-face{font-family:Panton-Regular;font-style:normal;src:url(Panton-Regular.ttf);font-display:swap}body{font-family:var(--ion-font-family);color:var(--ion-text-color)}</style><link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript></head>
+
+<body>
+  <app-root></app-root>
+  <script src="https://js.stripe.com/v3/"></script>
+<script src="runtime.js" type="module"></script><script src="polyfills.js" type="module"></script><script src="scripts.js" defer></script><script src="main.js" type="module"></script>
+
+
+</body></html>
